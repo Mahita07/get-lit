@@ -1,0 +1,410 @@
+*{
+        padding : 0;
+        margin: 0 ;
+        box-sizing: border-box;
+}
+html {
+    overflow-x:hidden !important;
+    
+}
+body{
+    background-image: linear-gradient(to right, #301934 ,#953553);
+    font-family: 'Montserrat', sans-serif;
+    
+    
+}
+.navbar {
+    position:sticky !important;
+    top:0;
+    z-index:9999;
+}
+.navbar-brand {
+    font-family: 'Oswald', sans-serif;
+    font-size:1.75rem;
+    color: whitesmoke;
+}
+.nav-link {
+    font-size: 1.1rem;
+}
+.carousel{
+    display:flex;
+   height:480px;   
+}
+.slide {
+    display:flex;
+
+}
+.carousel-indicators {
+    display:none;
+}
+.carousel_heading {
+    position: relative;
+    top:250px;
+    font-size: 1.75rem;
+}
+.carousel_text{
+    position: relative;
+    top:250px;
+    font-size:1.25rem;
+    text-align:center;
+}
+.car-icon {
+    position:relative;
+    bottom:140px;
+}
+
+.car_pic {
+    height:250px;
+}
+
+.updates_pic { 
+    width:100%;
+    height:100%;
+    border-radius: 6px;
+}
+.email-container {
+    position:relative;
+    top:20px;
+    margin-bottom:20px;
+}
+.email-text {
+    color:whitesmoke;
+    text-align:center;
+}
+.email-para {
+    font-weight:500;
+    font-size:1rem;
+}
+.email__input__field {
+    position:relative;
+    left:12px;
+}
+.email__input {
+    height:60px; 
+    margin-right:5px;
+}
+.email__button {
+    height:60px;
+    width:120px;
+    left:15px;
+    border:2px solid white;
+    color:white;
+   background-image:linear-gradient(to left, #502A56 ,#301934);
+   border-radius: 6px;
+}
+.email__button:hover {
+    background-image:linear-gradient(to right, #502A56 ,#301934);
+    
+}
+.card {
+    position:relative;
+    top:70px;
+    width:350px;
+    margin:12px;
+    background-color:#28282B;
+    color:white;
+    
+}
+.card-img-top {
+    height:250px;
+    width:200px;
+    padding:0.75rem;
+    position:relative;
+    left:70px;
+}
+.card-header, .card-footer {
+    background-color: #181818;
+
+}
+.card-title {
+    font-weight:700;
+    font-size:1.5rem;
+}
+.card-text {
+    font-weight:600;
+    font-size:1rem; 
+}
+.btn-outline-danger {
+    position:relative;
+    left:3px;
+    color:#953553;
+    font-weight: 500;
+    background-color:#181818;
+    border: 2px solid #953553; 
+}
+.btn-outline-info{
+    position:relative;
+    left:3px;
+    color:	#C3B1E1;
+    font-weight: 500;
+    background-color:#181818;
+    border: 2px solid 	#C3B1E1; 
+}
+.btn-outline-danger:hover {
+    background-color:#953553;
+    border: 2px solid #953553;
+}
+.btn-outline-info:hover {
+    background-color:	#C3B1E1;
+    border: 2px solid 	#C3B1E1;
+}
+.badge{
+    background-color:#502A56;
+    border: 1px solid white;
+}
+.card_footer_container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.btn_edit { 
+    color:cornflowerblue;
+    border:2px solid cornflowerblue ;
+}
+.books_heading_container {
+    position:relative;
+    top:50px;
+}
+.books_heading{
+    color:white;
+    text-align: center;
+}
+.footer_container {
+    position:relative;
+    top:100px;
+    color:whitesmoke;  
+    border-top: 1px solid whitesmoke;
+}
+.footer_logo {
+    position:relative;
+    left:20px;
+    top:20px;
+    font-family: 'Oswald', sans-serif;
+    font-size:3rem;
+    color: whitesmoke;
+}
+.footer_para {
+    position:relative;
+    padding:10px;
+    font-weight: 600;
+    top:20px;
+    left:10px;
+    
+}
+.footer_text_1 , .footer_text_2 {
+    padding:10px;
+    font-weight: 600;
+    position:relative;
+    left:10px;
+    
+}
+.footer_text_1 {
+    position:relative;
+    top:10px;
+}
+.footer_icons_container {
+    display:flex;
+    flex-direction:column ;
+    position:relative;
+    left:90px;
+}
+.footer_icons {
+    color:whitesmoke;
+ }
+.footer_icon_heading {
+    font-weight: 600;
+   
+}
+.icon {
+    position:relative;
+    right:10px;
+    padding:10px;
+    text-decoration: none;
+    color:whitesmoke;
+}
+      
+
+
+
+
+@media (min-width: 1200px) {
+.navbar {
+    display:flex;
+    justify-content: space-between;
+}
+    .navbar-brand {
+        position:relative;
+        left:20px;
+        font-size:3rem;
+    }
+    .navbar-nav {
+        position:relative;
+        left:530px;
+    }
+    .nav-item {
+        margin-right:30px;
+    }
+    .btn {
+        position:relative;
+        right:10px;
+    }
+.carousel{
+    display:flex;
+   height:600px;   
+}
+
+.car_pic {
+    height:600px;
+}
+.carousel-indicators {
+    display: inline-block;
+    left:350px;
+}
+.carousel_heading {
+    position: relative;
+    top:10px;
+    color:white;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+.carousel_text{
+    position: relative;
+    top:5px;
+    color:whitesmoke;
+    font-weight: 600;
+    font-size:1.25rem;
+    text-align:center;
+}
+.updates_container {
+    display: flex;
+    position:relative;
+    top:120px;
+}
+.updates_pic { 
+    width:500px;
+    height:300px;
+    border-radius: 6px;
+}
+.email-container {
+    position:relative;
+    left:30px;
+    top:50px;
+}
+.email__input__field {
+    position:relative;
+    left:50px;
+}
+.email-heading {
+    font-size:2.5rem;
+    padding:10px;
+}
+.email-para {
+    font-size:1.25rem;
+}
+.email__input {
+    height:50px;
+    width:325px;
+    margin-right: 20px;
+}
+.email__button {
+  left:20px;
+  height:50px;
+  width:150px;
+  font-size:1.1rem;
+}
+.card {
+    position:relative;
+    top:300px;
+    left:15px;
+    width:350px;
+    
+}
+.card-img-top {
+    height:250px;
+    width:200px;
+    padding:0.75rem;
+    position:relative;
+    left:70px;
+}
+.books_heading_container {
+    position:relative;
+    top:250px;
+    
+}
+.books_heading{
+    color:white;
+    font-weight:700;
+    font-size:3rem;
+    text-align: center;
+}
+.footer_container {
+    display:flex;
+    width:100%;
+    height:200px;
+    position:relative;
+    top:400px;
+    
+}
+
+footer_para {
+    padding-right:50px;
+    position:relative;
+    left:0;
+    top:0;
+    
+} 
+.footer_logo {
+    position:relative;
+    left:20px;
+    top:10px;
+    font-family: 'Oswald', sans-serif;
+    font-size:3rem;
+}
+.footer_text_1 , .footer_text_2 {
+    position:relative;
+    padding:10px;
+    font-weight: 600;
+    left:80px;
+    top:40px;
+}
+.footer_text_2 {
+    position:relative;
+    left:150px;  
+}
+.footer_icons_container {
+    display:flex;
+    flex-direction:column ;
+    position:relative;
+    left:210px;
+    top:50px;
+
+}
+
+.icon {
+    position:relative;
+    right:10px;
+    padding:10px;
+}
+.vertical_line {
+    display: inline-block;
+    border-left: 1px solid whitesmoke;
+    margin: 0 10px;
+    height: 150px;
+}
+.vl1 {
+    position:relative;
+    top:50px;
+    left:40px;
+}
+.vl2 {
+    position:relative;
+    top:50px;
+    left:110px;
+}
+.vl3 {
+    position:relative;
+    top:50px;
+    left:175px;
+}
+    
+
+}
