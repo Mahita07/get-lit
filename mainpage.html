@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style2.css"/>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"/>
+    <title>get lit</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body onload="retrieveTaskCard()">
+    <div>
+      <!--MODAL FOR ADDING NEW CARD-->
+      <div class="modal fade" id="newcardModal" tabindex="-1" aria-labelledby="newcardModalLabel" aria-hidden="true"><!--fade is used for smooth transition of modal...the id is important , will be used by bs, js -->
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">ADD NEW BOOK</h5>
+              <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="imageURL" class="form-label">IMAGE URL</label>
+                <input type="url" class="form-control" id="imageURL" placeholder="Enter URL"/>
+              </div>
+              <div class="mb-3">
+                <label for="TaskTitle" class="form-label">TITLE</label>
+                <input type="text" class="form-control" id="TaskTitle" placeholder="Enter Title "/>
+              </div>
+              <div class="mb-3">
+                <label for="TaskAuthor" class="form-label">AUTHOR</label>
+                <input type="text" class="form-control" id="TaskAuthor" placeholder="Enter Author" />
+              </div>
+              <div class="mb-3">
+                <label for="TaskType" class="form-label">GENRE</label>
+                <input type="text" class="form-control" id="TaskType" placeholder="Enter Task Type"/>
+              </div>
+              <div class="mb-3">
+                <label for="TaskDescription" class="form-label">DESCRIPTION</label>
+                <textarea rows="3" class="form-control" id="TaskDescription" placeholder="Enter Description"></textarea>  
+              </div>
+              <div class="mb-3">
+                <label for="Tasklink" class="form-label">BOOK LINK</label>
+                <input type="url" class="form-control" id="TaskLink" placeholder="Enter URL"/>
+              </div>
+            </div>
+            <div class="modal-footer">
+               <button onclick = "addcard()"type="button" class="btn btn-primary" data-bs-dismiss="modal">  <!--calling of addcard() function--> 
+                 SAVE
+               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end of modal-->
+      <!--navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+        <div class="container-fluid">
+          <a class="navbar-brand " href="#">get lit</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--to make button appear at right me-auto is used-->
+                <li class="nav-item ">
+                  <a class="nav-link"  href="#"><b>About</b></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link"  href="#"><b>Blog</b></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link"  href="#"><b>Contact</b></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link"  href="#"><b>Features</b></a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-light ml-auto" data-bs-toggle="modal" data-bs-target="#newcardModal"><!--modal id is inserted here to link modal with button-->
+              <i class="fa fa-plus"></i><b>ADD NEW</b>
+            </button>
+          </div> 
+        </div>
+      </nav>
+      <!--end of navbar-->
+      <main class="container">
+        <section>
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets\car_pic1.jpg" class="d-block w-100 car_pic" alt="carousel-pic1">
+                <div class="carousel-caption ">
+                  <h5 class="carousel_heading">Stop talking, Start Reading</h5>
+                  <p class="carousel_text">Welcome to get lit. Browse through 30+ genres.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets\car_pic2.jpg" class="d-block w-100  car_pic" alt="carousel-pic2">
+                <div class="carousel-caption">
+                  <h5 class="carousel_heading">Connect to the get lit community</h5>
+                  <p class="carousel_text">Join bookworms from all over the world.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets\car_pic3.jpg" class="d-block w-100 car_pic" alt="carousel-pic3">
+                <div class="carousel-caption">
+                  <h5 class="carousel_heading">Your happy place, right here</h5>
+                  <p class="carousel_text">Pick up a good book, get cozy and forget about everything else.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon car-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon car-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
+        <section>
+          <div class="updates_container">
+            <div class="updates_img_container">
+              <img src="assets\updates_pic.png" class ="updates_pic" alt="updates-img">
+            </div>
+            <div class="email-container">
+              <div class="email-text">
+                <h3 class="email-heading">JOIN get lit COMMUNITY</h3>
+                <p class="email-para">Sign up for a free membership to receive book suggestions, member perks and get notified about uploads.</p>
+              </div>
+              <div class="email__input__field">
+                <input type="email" placeholder="email@email.com" class="email__input"/>
+                <button class="email__button">SIGN UP</button>
+              </div> 
+            </div>
+          </div>  
+          <div class="books_heading_container">
+            <h2 class="books_heading">FEATURED BOOKS</h2>
+          </div>
+        </div>
+        </section> 
+        <section>
+          <div id="taskContentsrow" class="row"><!--id is added here this id is mentioned in js file to make task contents appear-->
+          </div>
+         </section>
+      </main>
+      <footer>
+        <div class="footer_container">
+          <div class="footer_logo_container">
+          <h3 class="footer_logo">get lit</h3>
+          <div class="footer_para_container">
+            <p class="footer_para">Our aim is to promote the love for books<br>and to bring all the bookworms together <br>to read and discuss about something that<br>matters to them.</p>
+          </div>
+        </div> 
+        <div class="vline">
+          <span class="vertical_line vl1"></span>
+      </div>
+          <div class="footer_text_1">
+            <h5 class="footer_heading">JOIN OUR COMMUNITY</h5>
+            <p class="footer_text">Forums</p>
+            <p class="footer_text">Blog</p>
+            <p class="footer_text">Meetups</p>            
+          </div>
+          <div class="vline">
+          <span class="vertical_line vl2"></span>
+      </div>
+          <div class="footer_text_2">
+            <h5 class="footer_heading">OUR TEAM</h5>
+            <p class="footer_text">Home</p>   
+            <p class="footer_text">About us</p>
+            <p class="footer_text">Contact</p>
+          </div>
+          <div class="vline">
+            <span class="vertical_line vl3"></span>
+        </div>
+          <div class="footer_icons_container">
+              <h5 class="footer_icon_heading">FOLLOW US AT</h5>
+              <div class="footer_icons">
+                <a href = "https://www.instagram.com/bookclubcentral/?hl=en">
+                  <i class="bi bi-instagram icon fa-2x"></i>
+                </a>
+                 
+                 <a href = "https://twitter.com/bookclubcentral?lang=en">
+                  <i class="bi bi-twitter icon fa-2x"></i>
+                </a>
+                <a href = "https://www.facebook.com/bookclubcentral/">
+                  <i class="bi bi-facebook icon fa-2x"></i>
+                </a>
+                <a href = "https://discord.me/onlinebookclub">
+                  <i class="bi bi-discord icon fa-2x"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+      </footer>
+    <script src="mainpage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body> 
+</html>
